@@ -1,0 +1,18 @@
+version: '2.0'
+
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: app
+
+  nginx_metrics:
+    image: nginx/nginx-prometheus-exporter:0.10.0
+    command: -nginx.scrape-uri=http://app:80/stub_status3
+
+  telegram_bot:
+    build:
+      dockerfile: Dockerfile
+      context: bot
+    volumes:
+      - ./persistent/bot:/persistent/bot

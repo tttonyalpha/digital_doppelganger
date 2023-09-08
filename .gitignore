@@ -1,0 +1,8 @@
+/all_dialogues.json
+/config.ini
+/my_name_is_nikita_hey.session
+
+/dialogues/*
+
+*.ipynb_checkpoints*
+*.__pycache__*
