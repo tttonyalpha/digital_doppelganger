@@ -1,0 +1,6 @@
+aiogram
+transformers
+peft
+torch
+accelerate
+bitsandbytes
