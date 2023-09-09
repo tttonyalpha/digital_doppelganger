@@ -37,7 +37,7 @@
 <h3 align="center">My digital doppelganger</h3>
 
   <p align="center">
-    I fine-tuned a large language model with free Google Colab on my Telegram conversations and created my digital doppelganger, here's what I got.
+    I fine-tuned a LLM with free Google Colab on my Telegram conversations and created my digital doppelganger
     <br />
     <a href="https://github.com/tttonyalpha/digital_copy"><strong>Explore the docs »</strong></a>
     <br />
@@ -86,41 +86,50 @@
 ![Dialogue screenshot][product-screenshot]
 <!-- (https://drive.google.com/file/d/12k2PHKTiuc_fPejNALLAS7gnQKYj06X2/view?usp=sharing) -->
 
-This is a conversational model that imitates mе. As the base model I took FRED-T5 - SOTA Russian LLM released 2 month ago - and fine-tuned it using instruct tuning on a dataset of 30k my Telegram conversations. I added a knowledge base with facts about me and a user feedback system with model fine-tuning on positive examples."
+This is a conversational model that imitates mе. As the base model I took [FRED-T5-1.7B](https://huggingface.co/ai-forever/FRED-T5-1.7B) - SOTA Russian LLM released 2 month ago - and fine-tuned it using instruct tuning on a dataset of 30k my Telegram conversations. I added a knowledge base with facts about me and a user feedback system with model fine-tuning on positive examples
+
+## Project structure
+
+The project has the following structure:
+- `assitant/`: `.py` scripts with data parsing and preprocessing
+- `assitant/models`: `.py` scripts with model training and inference modules
+- `assitant/bot`: `.py` telegram bot scripts 
+
 
 ## Data collection and preparation
 
-First, I exported selected dialogues from my two Telegram accounts in JSON format. Then, using the script tg_dump_parser.py, I filtered messages by removing links and messages with a large number of characters, and created samples for training. Each sample consists of a context in which the dialogue occur and my response . The context is a set of messages that are within a specific time frame, in my case, I chose 3 hours. In order not to lose generation quality and to speed-up the training process, I decided to limit the context length to 500 characters and the length of each individual message to 200 characters."
+First, I exported selected dialogues from my two Telegram accounts in JSON format. Then, using the script tg_dump_parser.py, I filtered messages by removing links and messages with a large number of characters, and created samples for training. Each sample consists of a context in which the dialogue occur and my response . The context is a set of messages that are within a specific time frame, in my case, I chose 3 hours. In order not to lose generation quality and to speed-up the training process, I decided to limit the context length to 500 characters and the length of each individual message to 200 characters
+
+SCREENSHOT HERE
 
 
 ## Model selection 
 
-For my task, I tried out several models in few-shot mode: falcon-7B, llama-2-7B,ruDialoGPT(rugpt3_based_on_gpt2), ruGPT-3.5-13B, FRED-T5-1.7B. Due to limited computational resources, time constraints, and the availability of Russian language among the models,FRED-T5 performed the best. Even in its pre-trained version, it understood instructions well and could maintain a sufficiently large context. Additionally, my choice is confirmed by the [Russian SuperGLUE Leaderboard](https://russiansuperglue.com/leaderboard/2)
+For my task, I tried out several models in few-shot mode: falcon-7B, llama-2-7B, ruDialoGPT, rugpt3_based_on_gpt2, ruGPT-3.5-13B, FRED-T5-1.7B. Due to limited computational resources, time constraints, and the availability of Russian language among the models, FRED-T5 performed the best. Even in its pre-trained version, it understood instructions well and could maintain a sufficiently large context. Additionally, my choice is confirmed by the [Russian SuperGLUE Leaderboard](https://russiansuperglue.com/leaderboard/2)
 
 
-## Efficient FRED-T5 fine-tuning with 8-bit Quantization, QLoRA and Gradient checkpointing 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Efficient FRED-T5 fine-tuning with 8-bit Quantization, LoRA and Gradient checkpointing 
+
+#### Fine-tuning tips  
 
 I had 6 free versions of Google Colab with an NVIDIA T4 GPU(16GB) and 12GB of RAM. In order to fit the model into such a small memory space, I used a quantized to int8 model. Yes, this caused a decrease in the speed of arithmetic operations, but it allowed me to fit larger models on the GPU.
 
-To speed up the training process, I decided to use QLora [[1]](#1). Now, instead of training the entire weight matrix, I trained low rank supplement, which significantly reduced the training time without a significant loss of quality.
+To speed up the training process, I decided to use LoRA [[1]](#1). Now, instead of training the entire weight matrix, I trained low rank supplement, which significantly reduced the training time without a significant loss of quality
+
+I also used gradient checkpointing and gradient accumulation to save GPU memory and increase effective batch size.
 
 
+#### Fine-tuning process 
+
+It takes 15 hours to finetune the model on a single T4 GPU. Due to Google Colab limitations, I had to save checkpoints of the model every 20 iterations and use 6 Google accounts
 
 
+TRANING GRAPH HERE
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-<!-- 
-#### Based on information from summary:
-    
-1. Recommend top 3 activity for next day (from my activity pool)
-2. Recommend Activity types on which i should focus next n-days 
-3. Rest time control 
-4. Tumblers for recommendations types: (work/rest/creativity) -->
-
-#### Architecture: 
-
-![lstm recsys][lstm_recsys]
 
 
 #### My model results: 
@@ -132,15 +141,6 @@ To speed up the training process, I decided to use QLora [[1]](#1). Now, instead
   
 If I haven't filled out the report, but attached photos, bot automatically analyzes the images and recognizes activities -->
 
-
-## Project structure
-
-The project has the following structure:
-- `assitant/`: `.py` scripts with data parsing and preprocessing
-- `assitant/models`: `.py` scripts with model training and inference modules
-- `assitant/bot`: `.py` telegram bot scripts 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- 
 
@@ -177,19 +177,12 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Telegram channel data fetcher and parser
-- [x] Database mechanics and data markup
-- [x] Activity classifier 
-- [x] Sentiment detector 
-- [x] Day score predictor
-- [x] Activity recommender
-- [x] LLM-based activity generator 
+- [x] Telegram dialogues parser
+- [x] Dialogue model based on FRED-T5
+- [x] Textual knowledge retriever
 
+- [ ] RLHF
 
-- [ ] LLM-based chat bot with intent recognition
-- [ ] LLM-based daily/weekly summaries generator 
-- [ ] Activities detection from images
-- [ ] Anomalies detection
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -210,20 +203,19 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## References
 <a id="1">[1]</a> 
-Revisiting Few-sample BERT Fine-tuning.
-Tianyi Zhang, Felix Wu, Arzoo Katiyar, Kilian Q. Weinberger, Yoav Artzi.<br>
-[arXiv:2006.05987](https://arxiv.org/abs/2006.05987)
+LoRA: Low-Rank Adaptation of Large Language Models
+Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen <br>
+[arXiv:2106.09685](https://arxiv.org/abs/2106.09685)
 
 <a id="2">[2]</a> 
-Investigating Transferability in Pretrained Language Models.
-Alex Tamkin, Trisha Singh, Davide Giovanardi, Noah Goodman.<br>
-[arXiv:2004.14975](https://arxiv.org/abs/2004.14975)
+Towards a Human-like Open-Domain Chatbot.
+Daniel Adiwardana, Minh-Thang Luong, David R. So, Jamie Hall, Noah Fiedel, Romal Thoppilan, Zi Yang, Apoorv Kulshreshtha, Gaurav Nemade, Yifeng Lu, Quoc V. Le<br>
+[arXiv:2001.09977](https://arxiv.org/abs/2001.09977)
 
 <a id="3">[3]</a> 
-Universal Language Model Fine-tuning for Text Classification.
-Jeremy Howard, Sebastian Ruder.<br>
-[arXiv:1801.06146](https://arxiv.org/abs/1801.06146)
-
+Training language models to follow instructions with human feedback
+Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul Christiano, Jan Leike, Ryan Lowe<br>
+[arXiv:2203.02155](https://arxiv.org/abs/2203.02155)
 
 <a id="4">[4]</a> 
 Scaling Instruction-Finetuned Language Models.
