@@ -88,39 +88,6 @@
 
 This is a conversational model that imitates mе. As the base model I took [FRED-T5-1.7B](https://huggingface.co/ai-forever/FRED-T5-1.7B) - SOTA Russian LLM released 2 month ago - and fine-tuned it using instruct tuning on a dataset of 30k my Telegram conversations. I added a knowledge base with facts about me and a user feedback system with model fine-tuning on positive examples
 
-## Project structure
-
-The project has the following structure:
-- `digital_copy/app`: Flask app for model 
-- `digital_copy/models_traning`: `.py` scripts with model fine-tuning  
-- `digital_copy/telegram_bot`: Telegram bot scripts and Dockerfile for conterization  
-- `digital_copy/telegram_bot_for_debug`: light version of telegram bot for debug
-- `digital_copy/tg_dump_parser.py`: telegram gualogues dump parser 
-
-## How to run
-
-
-#### Full version
-
-1. In [bot.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot/bot.py) insert bot token 
-2. From ```app``` run
-
-```
-docker-compose up --build
-```
-
-#### Debug version
-
-1. In [tg_bot_beta.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot_for_debug/tg_bot_beta.py) replace ```'BOT_TOKEN'``` with your bot token 
-2. Download model's checkpoint 
-3. In [tg_bot_beta.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot_for_debug/tg_bot_beta.py) replace ```'PATH_TO_CHECKPOINT'``` with checkpoint path
-4. Inside ```telegram_bot_for_debug``` run: 
-
-```
-docker build -t bot_image .
-docker run -d --name bot_container bot_image
-```
-
 
 ## Data collection and preparation
 
@@ -200,6 +167,39 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
+
+## Project structure
+
+The project has the following structure:
+- `digital_copy/app`: Flask app for model 
+- `digital_copy/models_traning`: `.py` scripts with model fine-tuning  
+- `digital_copy/telegram_bot`: Telegram bot scripts and Dockerfile for conterization  
+- `digital_copy/telegram_bot_for_debug`: light version of telegram bot for debug
+- `digital_copy/tg_dump_parser.py`: telegram gualogues dump parser 
+
+## How to run
+
+
+#### Full version
+
+1. Insert bot token in [bot.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot/bot.py) 
+2. From ```app``` run
+
+```
+docker-compose up --build
+```
+
+#### Debug version
+
+1. In [tg_bot_beta.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot_for_debug/tg_bot_beta.py) replace ```'BOT_TOKEN'``` with your bot token 
+2. Download model's checkpoint 
+3. In [tg_bot_beta.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot_for_debug/tg_bot_beta.py) replace ```'PATH_TO_CHECKPOINT'``` with checkpoint path
+4. Inside ```telegram_bot_for_debug``` run: 
+
+```
+docker build -t bot_image .
+docker run -d --name bot_container bot_image
+```
 
 
 <!-- ROADMAP -->
