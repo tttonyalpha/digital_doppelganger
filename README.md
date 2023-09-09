@@ -110,9 +110,9 @@ For my task, I tried out several models in few-shot mode: falcon-7B, llama-2-7B,
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Efficient FRED-T5 fine-tuning with 8-bit Quantization, LoRA and Gradient checkpointing 
+## Efficient FRED-T5 fine-tuning 
 
-#### Fine-tuning tips  
+#### 8-bit Quantization, LoRA and GPU memory optimization
 
 I had 6 free versions of Google Colab with an NVIDIA T4 GPU(16GB) and 12GB of RAM. In order to fit the model into such a small memory space, I used a quantized to int8 model. Yes, this caused a decrease in the speed of arithmetic operations, but it allowed me to fit larger models on the GPU.
 
@@ -123,7 +123,9 @@ I also used gradient checkpointing and gradient accumulation to save GPU memory 
 
 #### Fine-tuning process 
 
-It takes 15 hours to finetune the model on a single T4 GPU. Due to Google Colab limitations, I had to save checkpoints of the model every 20 iterations and use 6 Google accounts
+It takes 19 hours to finetune the model on a single T4 GPU. Due to free Google Colab limitations, I had to save checkpoints of the model every 20 iterations and used 6 Google accounts
+
+[See finetuning notebooks](https://github.com/tttonyalpha/digital_copy/tree/main/models_traning)
 
 
 TRANING GRAPH HERE
@@ -179,8 +181,10 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 
 - [x] Telegram dialogues parser
 - [x] Dialogue model based on FRED-T5
+- [x] Flask server and Telegram bot
 - [x] Textual knowledge retriever
 
+- [ ] Finetuning system based on human feedback 
 - [ ] RLHF
 
 
