@@ -37,7 +37,7 @@
 <h3 align="center">My digital doppelganger</h3>
 
   <p align="center">
-    I fine-tuned a LLM with free Google Colab on my Telegram conversations and created my digital doppelganger
+    I fine-tuned a LLM using free Google Colab on my Telegram conversations and created my digital doppelganger.
     <br />
     <a href="https://github.com/tttonyalpha/digital_copy"><strong>Explore the docs »</strong></a>
     <br />
@@ -91,9 +91,11 @@ This is a conversational model that imitates mе. As the base model I took [FRED
 ## Project structure
 
 The project has the following structure:
-- `assitant/`: `.py` scripts with data parsing and preprocessing
-- `assitant/models`: `.py` scripts with model training and inference modules
-- `assitant/bot`: `.py` telegram bot scripts 
+- `digital_copy/app`: Flask app for model 
+- `digital_copy/models_traning`: `.py` scripts with model fine-tuning  
+- `digital_copy/telegram_bot`: Telegram bot scripts and Dockerfile for conterization  
+- `digital_copy/telegram_bot_for_debug`: light version of telegram bot for debug
+- `digital_copy/tg_dump_parser.py`: telegram gualogues dump parser 
 
 
 ## Data collection and preparation
@@ -125,7 +127,7 @@ I also used gradient checkpointing and gradient accumulation to save GPU memory 
 
 It takes 19 hours to finetune the model on a single T4 GPU. Due to free Google Colab limitations, I had to save checkpoints of the model every 20 iterations and used 6 Google accounts
 
-[See finetuning notebooks](https://github.com/tttonyalpha/digital_copy/tree/main/models_traning)
+[see fine-tuning notebooks](https://github.com/tttonyalpha/digital_copy/tree/main/models_traning)
 
 
 TRANING GRAPH HERE
