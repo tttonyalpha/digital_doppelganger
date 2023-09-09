@@ -97,6 +97,30 @@ The project has the following structure:
 - `digital_copy/telegram_bot_for_debug`: light version of telegram bot for debug
 - `digital_copy/tg_dump_parser.py`: telegram gualogues dump parser 
 
+## How to run
+
+
+#### Full version
+
+1. In [bot.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot/bot.py) insert bot token 
+2. From ```app``` run
+
+```
+docker-compose up --build
+```
+
+#### Debug version
+
+1. In [tg_bot_beta.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot_for_debug/tg_bot_beta.py) replace ```'BOT_TOKEN'``` with your bot token 
+2. Download model's checkpoint 
+3. In [tg_bot_beta.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot_for_debug/tg_bot_beta.py) replace ```'PATH_TO_CHECKPOINT'``` with checkpoint path
+4. Inside ```telegram_bot_for_debug``` run: 
+
+```
+docker build -t bot_image .
+docker run -d --name bot_container bot_image
+```
+
 
 ## Data collection and preparation
 
