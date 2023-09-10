@@ -1,14 +1,9 @@
 FROM python:3.7
 
+COPY requirements.txt /app/requirements.txt
+WORKDIR /app
+RUN pip install -r requirements.txt
 
-COPY requirements.txt ./
-RUN pip3 install -r requirements.txt
+COPY bot.py /app/bot.py
 
-RUN mkdir /digital_copy
-WORKDIR /digital_copy
-
-COPY tg_bot_beta.py /digital_copy
-
-ENTRYPOINT [ "python", "tg_bot_beta.py" ]
-
-
+CMD ["python", "bot.py"]

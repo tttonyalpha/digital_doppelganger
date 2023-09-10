@@ -1,6 +1,10 @@
-aiogram
+aiogram==2.15
 transformers
 peft
 torch
 accelerate
 bitsandbytes
+scipy
+sentence_transformers
+nest-asyncio
+
