@@ -198,7 +198,7 @@ docker-compose up --build
 
 1. In [tg_bot_beta.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot_for_debug/tg_bot_beta.py) replace ```'BOT_TOKEN'``` with your bot token 
 2. Download model's checkpoint 
-3. In [tg_bot_beta.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot_for_debug/tg_bot_beta.py) replace ```'PATH_TO_CHECKPOINT'``` with checkpoint path
+3. In [tg_bot_beta.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot_for_debug/tg_bot_beta.py) replace ```'PATH_TO_CHECKPOINT'``` and ```'KNOWLEDGE_BASE_PATH'``` with it's actual path
 4. Inside ```telegram_bot_for_debug``` run: 
 
 ```
