@@ -83,7 +83,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Uploading GIFMaker_me.gif…]()
+![GIFMaker_me](https://github.com/tttonyalpha/digital_copy/assets/79598074/c7982eb3-ac51-4659-aebf-72eb475a4fc4)
+
 
 <!-- ![Dialogue screenshot][product-screenshot]  -->
 <!-- (https://drive.google.com/file/d/12k2PHKTiuc_fPejNALLAS7gnQKYj06X2/view?usp=sharing) -->
