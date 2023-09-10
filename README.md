@@ -90,6 +90,10 @@ https://github.com/tttonyalpha/digital_copy/assets/79598074/3755bcff-08db-4e18-9
 
 
 
+https://github.com/tttonyalpha/digital_copy/assets/79598074/2bef2beb-77c7-43af-bdc8-f2d845631d1d
+
+
+
 
 <!-- ![Dialogue screenshot][product-screenshot]  -->
 <!-- (https://drive.google.com/file/d/12k2PHKTiuc_fPejNALLAS7gnQKYj06X2/view?usp=sharing) -->
