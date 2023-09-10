@@ -83,7 +83,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Dialogue screenshot][product-screenshot]
+https://github.com/tttonyalpha/digital_copy/assets/79598074/26b72c19-90f3-409c-99dc-f6cef7a46ef9
+
+
+<!-- ![Dialogue screenshot][product-screenshot]  -->
 <!-- (https://drive.google.com/file/d/12k2PHKTiuc_fPejNALLAS7gnQKYj06X2/view?usp=sharing) -->
 
 This is a conversational model that imitates mе. As the base model I took [FRED-T5-1.7B](https://huggingface.co/ai-forever/FRED-T5-1.7B) - SOTA Russian LLM released 2 month ago - and fine-tuned it using instruct tuning on a dataset of 30k my Telegram conversations. I added a knowledge base with facts about me and a user feedback system with model fine-tuning on positive examples
@@ -99,6 +102,8 @@ SCREENSHOT HERE
 ## Model selection 
 
 For my task, I tried out several models in few-shot mode: falcon-7B, llama-2-7B, ruDialoGPT, rugpt3_based_on_gpt2, ruGPT-3.5-13B, FRED-T5-1.7B. Due to limited computational resources, time constraints, and the availability of Russian language among the models, FRED-T5 performed the best. Even in its pre-trained version, it understood instructions well and could maintain a sufficiently large context. Additionally, my choice is confirmed by the [Russian SuperGLUE Leaderboard](https://russiansuperglue.com/leaderboard/2)
+
+![image](https://github.com/tttonyalpha/digital_copy/assets/79598074/441ce490-3577-4834-b093-cef7f67990eb)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -120,8 +125,8 @@ It takes 19 hours to finetune the model on a single T4 GPU. Due to free Google C
 
 [see fine-tuning notebooks](https://github.com/tttonyalpha/digital_copy/tree/main/models_traning)
 
+![filename](https://github.com/tttonyalpha/digital_copy/assets/79598074/d8ecbd3f-2405-4fe0-aa82-f030096c7bd1)
 
-TRANING GRAPH HERE
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -193,7 +198,7 @@ docker-compose up --build
 
 1. In [tg_bot_beta.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot_for_debug/tg_bot_beta.py) replace ```'BOT_TOKEN'``` with your bot token 
 2. Download model's checkpoint 
-3. In [tg_bot_beta.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot_for_debug/tg_bot_beta.py) replace ```'PATH_TO_CHECKPOINT'``` with checkpoint path
+3. In [tg_bot_beta.py](https://github.com/tttonyalpha/digital_copy/blob/main/telegram_bot_for_debug/tg_bot_beta.py) replace ```'PATH_TO_CHECKPOINT'``` and ```'KNOWLEDGE_BASE_PATH'``` with it's actual path
 4. Inside ```telegram_bot_for_debug``` run: 
 
 ```
