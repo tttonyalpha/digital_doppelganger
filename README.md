@@ -84,11 +84,14 @@
 ## About The Project
 
 
-https://github.com/tttonyalpha/digital_copy/assets/79598074/691b3678-ea1c-47e5-bff1-b0f5dd4abbe6
+
+https://github.com/tttonyalpha/digital_copy/assets/79598074/8af3ed03-0f0d-4999-a3d7-f18165c72f42
 
 
 
-https://github.com/tttonyalpha/digital_copy/assets/79598074/2bef2beb-77c7-43af-bdc8-f2d845631d1d
+https://github.com/tttonyalpha/digital_copy/assets/79598074/26b72c19-90f3-409c-99dc-f6cef7a46ef9
+
+
 
 
 <!-- ![Dialogue screenshot][product-screenshot]  -->
