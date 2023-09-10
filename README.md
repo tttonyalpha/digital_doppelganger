@@ -106,10 +106,6 @@ For my task, I tried out several models in few-shot mode: falcon-7B, llama-2-7B,
 ![image](https://github.com/tttonyalpha/digital_copy/assets/79598074/441ce490-3577-4834-b093-cef7f67990eb)
 
 
-![image](https://github.com/tttonyalpha/digital_copy/assets/79598074/16396f24-244c-4dec-b5c0-5c5430617512)
-
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Efficient FRED-T5 fine-tuning 
