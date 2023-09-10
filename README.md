@@ -83,15 +83,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-
-
-https://github.com/tttonyalpha/digital_copy/assets/79598074/8af3ed03-0f0d-4999-a3d7-f18165c72f42
-
-
-
 https://github.com/tttonyalpha/digital_copy/assets/79598074/26b72c19-90f3-409c-99dc-f6cef7a46ef9
-
-
 
 
 <!-- ![Dialogue screenshot][product-screenshot]  -->
@@ -131,8 +123,8 @@ It takes 19 hours to finetune the model on a single T4 GPU. Due to free Google C
 
 [see fine-tuning notebooks](https://github.com/tttonyalpha/digital_copy/tree/main/models_traning)
 
+![filename](https://github.com/tttonyalpha/digital_copy/assets/79598074/d8ecbd3f-2405-4fe0-aa82-f030096c7bd1)
 
-TRANING GRAPH HERE
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
