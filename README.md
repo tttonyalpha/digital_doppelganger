@@ -103,6 +103,8 @@ SCREENSHOT HERE
 
 For my task, I tried out several models in few-shot mode: falcon-7B, llama-2-7B, ruDialoGPT, rugpt3_based_on_gpt2, ruGPT-3.5-13B, FRED-T5-1.7B. Due to limited computational resources, time constraints, and the availability of Russian language among the models, FRED-T5 performed the best. Even in its pre-trained version, it understood instructions well and could maintain a sufficiently large context. Additionally, my choice is confirmed by the [Russian SuperGLUE Leaderboard](https://russiansuperglue.com/leaderboard/2)
 
+![image](https://github.com/tttonyalpha/digital_copy/assets/79598074/7a9cc7f5-e221-4614-8ab3-b4404da35b06)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
