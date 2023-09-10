@@ -83,7 +83,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Dialogue screenshot][product-screenshot]
+![Uploading GIFMaker_me.gif…]()
+
+<!-- ![Dialogue screenshot][product-screenshot]  -->
 <!-- (https://drive.google.com/file/d/12k2PHKTiuc_fPejNALLAS7gnQKYj06X2/view?usp=sharing) -->
 
 This is a conversational model that imitates mе. As the base model I took [FRED-T5-1.7B](https://huggingface.co/ai-forever/FRED-T5-1.7B) - SOTA Russian LLM released 2 month ago - and fine-tuned it using instruct tuning on a dataset of 30k my Telegram conversations. I added a knowledge base with facts about me and a user feedback system with model fine-tuning on positive examples
