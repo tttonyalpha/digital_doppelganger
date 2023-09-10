@@ -83,7 +83,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![GIFMaker_me](https://github.com/tttonyalpha/digital_copy/assets/79598074/c7982eb3-ac51-4659-aebf-72eb475a4fc4)
+
+
+https://github.com/tttonyalpha/digital_copy/assets/79598074/3755bcff-08db-4e18-947b-e95c440b7141
+
+
+
 
 
 <!-- ![Dialogue screenshot][product-screenshot]  -->
