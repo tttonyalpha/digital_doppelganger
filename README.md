@@ -255,12 +255,12 @@ Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mis
 [arXiv:2203.02155](https://arxiv.org/abs/2203.02155)
 
 <a id="4">[4]</a> 
-Scaling Instruction-Finetuned Language Models.
+Scaling Instruction-Finetuned Language Models.<br>
 Team from Google.<br>
 [arXiv:2210.11416](https://arxiv.org/abs/2210.11416)
 
 <a id="5">[5]</a> 
-Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks.
+Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. <br>
 Nils Reimers, Iryna Gurevych. <br>
 [arXiv:1908.10084](https://arxiv.org/abs/1908.10084)
 
