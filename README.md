@@ -94,9 +94,9 @@ This is a conversational model that imitates mе. As the base model I took [FRED
 
 ## Data collection and preparation
 
-First, I exported selected dialogues from my two Telegram accounts in JSON format. Then, using the script tg_dump_parser.py, I filtered messages by removing links and messages with a large number of characters, and created samples for training. Each sample consists of a context in which the dialogue occur and my response . The context is a set of messages that are within a specific time frame, in my case, I chose 3 hours. In order not to lose generation quality and to speed-up the training process, I decided to limit the context length to 500 characters and the length of each individual message to 200 characters
+I exported selected dialogues from my two Telegram accounts in JSON format. Then, using the script tg_dump_parser.py, I filtered messages by removing links and messages with a large number of characters, and created samples for training. Each sample consists of a context in which the dialogue occur and my response . The context is a set of messages that are within a specific time frame, in my case, I chose 3 hours. In order not to lose generation quality and to speed-up the training process, I decided to limit the context length to 500 characters and the length of each individual message to 200 characters
 
-SCREENSHOT HERE
+![Picsart_23-09-16_16-45-58-188 (2)](https://github.com/tttonyalpha/digital_copy/assets/79598074/91fdfa51-051c-439e-9d08-89a39f0bf1ed)
 
 
 ## Model selection 
