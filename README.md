@@ -114,7 +114,7 @@ For my task, I tried out several models in few-shot mode: falcon-7B, llama-2-7B,
 
 I had 6 free versions of Google Colab with an NVIDIA T4 GPU(16GB) and 12GB of RAM. In order to fit the model into such a small memory space, I used a quantized to int8 model. Yes, this caused a decrease in the speed of arithmetic operations, but it allowed me to fit larger models on the GPU.
 
-To speed up the training process, I decided to use LoRA [[1]](#1). Now, instead of training the entire weight matrix, I trained low rank supplement, which significantly reduced the training time without a significant loss of quality
+To speed up the training process, I decided to use LoRA [[2]](#2). Now, instead of training the entire weight matrix, I trained low rank supplement, which significantly reduced the training time without a significant loss of quality
 
 I also used gradient checkpointing and gradient accumulation to save GPU memory and increase effective batch size.
 
@@ -130,11 +130,6 @@ It takes 19 hours to finetune the model on a single T4 GPU. Due to free Google C
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-#### My model results: 
-
-![lstm predictions][lstm_predictions]
 
 
 <!-- ## Feature 3: Activity recognition on images 
@@ -184,6 +179,11 @@ The project has the following structure:
 
 ## How to run
 
+#### Google Colab version 
+
+
+1. Insert bot token in notebook and run all cells [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1kDaW-x9D0AJjTdoWnpkkI3EC4vi6nN_X?usp=sharing)
+
 
 #### Full version
 
@@ -202,8 +202,7 @@ docker-compose up --build
 4. Inside ```telegram_bot_for_debug``` run: 
 
 ```
-docker build -t bot_image .
-docker run -d --name bot_container bot_image
+docker-compose up --build
 ```
 
 
@@ -215,6 +214,8 @@ docker run -d --name bot_container bot_image
 - [x] Flask server and Telegram bot
 - [x] Textual knowledge retriever
 
+
+- [ ] Add SSA metric
 - [ ] Finetuning system based on human feedback 
 - [ ] RLHF
 
@@ -237,15 +238,16 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 ## References
-<a id="1">[1]</a> 
-LoRA: Low-Rank Adaptation of Large Language Models
-Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen <br>
-[arXiv:2106.09685](https://arxiv.org/abs/2106.09685)
 
-<a id="2">[2]</a> 
+<a id="1">[1]</a> 
 Towards a Human-like Open-Domain Chatbot.
 Daniel Adiwardana, Minh-Thang Luong, David R. So, Jamie Hall, Noah Fiedel, Romal Thoppilan, Zi Yang, Apoorv Kulshreshtha, Gaurav Nemade, Yifeng Lu, Quoc V. Le<br>
 [arXiv:2001.09977](https://arxiv.org/abs/2001.09977)
+
+<a id="2">[2]</a> 
+LoRA: Low-Rank Adaptation of Large Language Models
+Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen <br>
+[arXiv:2106.09685](https://arxiv.org/abs/2106.09685)
 
 <a id="3">[3]</a> 
 Training language models to follow instructions with human feedback
@@ -256,6 +258,12 @@ Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mis
 Scaling Instruction-Finetuned Language Models.
 Team from Google.<br>
 [arXiv:2210.11416](https://arxiv.org/abs/2210.11416)
+
+<a id="5">[5]</a> 
+Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks.
+Nils Reimers, Iryna Gurevych. <br>
+[arXiv:1908.10084](https://arxiv.org/abs/1908.10084)
+
 
 
 
