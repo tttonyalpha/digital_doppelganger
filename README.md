@@ -179,10 +179,10 @@ The project has the following structure:
 
 ## How to run
 
-#### Google Colab version 
+#### Google Colab version (debug version)
+! Langchain and FAISS works in demo mode
 
-
-1. Insert bot token in notebook and run all cells [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1kDaW-x9D0AJjTdoWnpkkI3EC4vi6nN_X?usp=sharing)
+1. Insert bot token, knowledge base links in notebook and run all cells [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1kDaW-x9D0AJjTdoWnpkkI3EC4vi6nN_X?usp=sharing)
 
 
 #### Full version
